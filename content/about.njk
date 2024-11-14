@@ -1,0 +1,47 @@
+---js
+const eleventyNavigation = {
+	key: "About us",
+	order: 6
+};
+
+const bios = [
+  {
+    name: 'Stuart Coleman',
+     url: 'https://www.waicleanwater.org/',
+    image: 'images/stuart-150x150.jpg',
+    text: '**Stuart Holmes Coleman** is a writer, speaker, surfer and environmental organizer.  Coleman is the award-winning author of _Eddie Would Go,_ _Fierce Heart_ and more than 60 published articles and poems. His newest book is called _Eddie Aikau: Hawaiian Hero_ (Bess Press, 2016).  Along with the Eliot Cades Award for Literature, he has won writing fellowships at The Mesa Refuge, The Norman Mailer Center and Vaughan Park in New Zealand.  Coleman has taught writing, literature and leadership at Punahou and Iolani Schools, the University of Hawaii and the East-West Center.  After working as the Hawaii Manager of the Surfrider Foundation, Stuart is now the Executive Director and Co-founder a new nonprofit called WAI: Wastewater Alternatives & Innovations.'
+  },
+  {
+    name: 'Mark Watkins',
+    url: 'https://www.bookshipapp.com',
+    image: 'images/MarkBlueSmall.jpg',
+    text: '**Mark Watkins** is the founder of [Bookship](https://www.bookshipapp.com), a Social Reading app for sharing your reading experiences with friends, family and book club members. Mark was previously CEO & co-founder of goby, a mobile recommendation engine for finding fun things to do, and VP of Engineering at Endeca, a search platform, since acquired by Oracle. Mark loves startups & entrepreneurship, mentoring frequently in the Hawaii startup community. He is passionate about books & literacy, tennis, and is an aspiring outrigger canoe paddler.'
+  },
+]
+---
+{% import "_includes/card.njk" as card %}
+
+<h1>About us</h1>
+
+ {{ card.icard("", "", "images/cropped-HonMagBadge-291x300.png", "award", "**Woohoo** ! We are humbled and grateful (and more than a little excited!) to say we've been selected a '**Best of Honolulu**' for 2017! 
+  Books & Spirits was recognized as 'the place to meet the smart set' (that'd be you folks btw!). Thank you to those who've been 
+  to our events, now or in the future! And thanks to Honolulu Magazine for the recognition. Mahalo!" | markdownify | safe) }}
+
+<p style="text-align: center;">
+  <strong>
+    <span>Our Story</span></strong>
+</p>
+
+<p>
+  <span>Books &amp; Spirits is a collaboration between noted author Stuart Holmes Coleman and serial entrepreneur and executive Mark Watkins.</span>
+</p>
+
+<p>
+  <span class="s1">We are passionate lovers of books and reading, and believe books change lives. </span>Reading good books is an essential balance to the deluge&nbsp;of internet and TV trivia we get every day.&nbsp;This project is one of the ways we are trying to encourage more reading.
+</p>
+
+<div class="cards">
+  {% for bio in bios %}
+    {{ card.card(bio.name, bio.url, bio.image, "greece", bio.text | markdownify | safe) }}
+  {% endfor %}
+</div>

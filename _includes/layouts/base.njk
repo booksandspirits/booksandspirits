@@ -1,16 +1,31 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+    <meta property="og:title" content="{{ metadata.titleE}}">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="{{ metadata.titleE}}">
+		<meta property="og:description" content="{{ metadata.description }}">
+		<meta property="og:image" content="{{metadata.image}}">
+		<meta property="og:url" content="{{metadata.url}}">
 
-		{#-
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ metadata.titleE}}" />
+    <meta name="twitter:description" content="{{ metadata.description }}" />
+		<meta name="twitter:site" content="{{metadata.twitter}}">
+		<meta name="twitter:image" content="{{metadata.image}}">
+
+    <meta name="color-scheme" content="light dark">
+
+    {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
+    {#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+
+    {#-
 		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
 		1. CSS:
 			* Add to a per-page bundle using `{% css %}{% endcss %}`
@@ -21,49 +36,98 @@
 		3. Learn more: https://github.com/11ty/eleventy-plugin-bundle
 		#}
 
-		{#- Add an arbitrary string to the bundle #}
-		{%- css %}/* This is an arbitrary CSS string added to the bundle */{% endcss %}
-		{#- Add the contents of a file to the bundle #}
-		{%- css %}{% include "public/css/index.css" %}{% endcss %}
-		{#- Or you can add from node_modules #}
-		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+    {#- Add an arbitrary string to the bundle #}
+    {%- css %}/* This is an arbitrary CSS string added to the bundle */{% endcss %}
+    {#- Add the contents of a file to the bundle #}
+    {%- css %}{% include "public/css/index.css" %}{% endcss %}
+    {#- Or you can add from node_modules #}
+    {# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+    {#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
 
-		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
-		<style>{% getBundle "css" %}</style>
-		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
-		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+    {# <style>
+      {% getBundle "css" %}
+    </style> #}
+    {#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
+    <link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
-	</head>
-	<body>
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+    {#- Add the heading-anchors web component to the JavaScript bundle #}
+    {%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+  </head>
+  <body>
+    <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+    <header>
+      <div class="header-contents">
+        {# <img src="images/Books_Spirits_Header_1024.jpg" alt="Books & Spirits" style="position: absolute; height: 10rem; width: 100%;" /> #}
+        <div class="flexcolumn" style="padding-leftX: 2rem;">
+          <a href="/" class="home-link brand-font font-huge header-color">{{ metadata.title }}</a>
+          <div class="font-uppercase">Where readers and authors meet</div>
+        </div>
+        <nav>
+          <h2 class="visually-hidden">Top level navigation menu</h2>
+          <ul class="nav">
+            {%- for entry in collections.all | eleventyNavigation %}
+              <li class="nav-item">
+                <a class="header-color" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+              </li>
+            {%- endfor %}
+            {% for item in collections.pages %}
+              <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.data.title }}</a>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+      <div style="padding-top: 3rem; max-width: 100%;">      
+      {% include "emailform.njk" %}
+      </div>
+    </header>
 
-		<main id="skip">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
-		</main>
+    <main id="skip">
+      <heading-anchors>
+        {{ content | safe }}
+      </heading-anchors>
+    </main>
 
-		<footer>
-			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
-		</footer>
+    <footer>
+      <hr />
 
-		<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
-		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
-	</body>
-</html>
+      <div class="flex">
+        {% if metadata.twitter %}
+          <a href="https://twitter.com/{{ metadata.twitter }}" target="_blank" rel="noopener" aria-label="Twitter" rel="me">
+            {% FontAwesomeIcon name = "twitter", type = "brand", class = "social-icons" %}
+          </a>
+        {% endif %}
+
+        {% if metadata.facebook %}
+          <a href="https://www.facebook.com/{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+            {% FontAwesomeIcon name = "facebook-f", type = "brand", class = "social-icons" %}
+          {% endif %}
+
+          {% if metadata.instagram %}
+            <a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+              {% FontAwesomeIcon name = "instagram", type = "brand", class = "social-icons" %}
+            {% endif %}
+
+            <a href="/feed/feed.xml" target="_blank" rel="noopener" aria-label="RSS feed">
+              {% FontAwesomeIcon name = "rss", type = "solid", class = "social-icons" %}
+
+              {% if metadata.youtube_username %}
+                <a href="https://youtube.com/user/{{ site.youtube_username }}" target="_blank" rel="noopener" aria-label="YouTube">{% include " /images/icons/youtube" %}</a>
+              {% endif %}
+              {% if metadata.github_username %}
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="me noopener" aria-label="GitHub">{% include " /images/icons/github" %}</a>
+              {% endif %}
+              {% if metadata.codepen_username %}
+                <a href="https://codepen.io/{{ site.codepen_username }}" target="_blank" rel="noopener" aria-label="CodePen">{% include " /images/icons/codepen" %}</a>
+              {% endif %}
+              {% if metadata.linkedin_username %}
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn">{% include " /images/icons/linkedin" %}</a>
+              {% endif %}
+            </div>
+          </footer>
+
+          <!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
+          <script type="module" src="{% getBundleFileUrl "js" %}"></script>
+        </body>
+      </html>

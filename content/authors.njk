@@ -1,0 +1,83 @@
+---js
+const eleventyNavigation = {
+	key: "Authors",
+	order: 3
+};
+
+const authors = [
+{
+name: 'Adam Johnson',
+url: 'https://english.stanford.edu/people/adam-johnson',
+image: 'images/authors/Adam-Johnson-by-David-Gonzales.jpg', 
+text: `Adam Johnson is a Professor of English with emphasis in creative writing at Stanford University. Winner of a 
+Whiting Award and Fellowships from the Guggenheim Foundation, the National Endowment for the Arts and the
+ American Academy in Berlin, he is the author of several books, including _Fortune Smiles_, which won the 
+ 2015 National Book Award, and the novel _The Orphan Master’s Son_, which was awarded the 2013 Pulitzer Prize. His 
+ fiction has appeared in Esquire, GQ, Playboy, Harper\'s Magazine, Granta, 
+Tin House and The Best American Short Stories. His work has been translated into more than thirty languages.`
+},
+{
+name: 'Douglas Abrams',
+url: 'https://doug-abrams.com/',
+image: 'images/authors/Doug-Abrams.jpg', 
+text: `He has had the privilege of working on books for Nobel Peace Laureates Desmond Tutu, Nelson Mandela, the Dalai Lama, and 
+Jody Williams. He has written books with Desmond Tutu for over a decade and most recently is the co-author 
+of _The Book of Joy_ with Desmond Tutu and the Dalai Lama. His books have been credited with convincing then-President Bill Clinton
+ to stop genocide and for launching the modern anti-slavery movement. He is currently the co-founder with Desmond Tutu and Pam Omidyar of 
+ Human Journey, which is using multimedia to spread visionary ideas that can improve our lives and our world.
+
+
+Doug is also the Founder & President of Idea Architects, a creative book and media agency helping visionaries create a wiser, healthier, and more just world. One book at a time.
+He comes from a publishing family and learned about ideas, books, and culture around the dinner table. He is married to Rachel Carlton Abrams, an integrative physician and the love of his life. They have three children, Jesse, Kayla, and Eliana. He can also be found riding waves where he lives in Santa Cruz, California.`
+},
+{
+name: 'Rachel Carlton Abrams',
+url: 'https://www.doctorrachel.com/',
+image: 'images/authors/Rachel_Abrams-1306-Photo-Credit-Margot-Duane-Photography-med-res.jpg', 
+text: `"Doctor Rachel" is the author of _BodyWise: Discovering Your Body’s Intelligence for Lifelong Health and Healing_.  
+She graduated Phi Beta Kappa from Stanford University, received her MD from UC San Francisco and a Master’s Degree in 
+Holistic Health from UC Berkeley. She is Board Certified in Family Medicine and Integrative Medicine. In 2008 she 
+opened the award-winning Santa Cruz Integrative Medicine Clinic. Dr. Abrams treats many of the world’s most influential people, 
+from CEOs to billionaire entrepreneurs to Nobel Peace laureates. 
+She has been voted “Best Doctor” in Santa Cruz County every year, from 2009–2016.`
+},
+{
+name: 'William Finnegan',
+url: 'https://www.newyorker.com/contributors/william-finnegan',
+image: 'images/authors/William-Finnegan.jpg', 
+text: `William Finnegan is the author of _Barbarian Days: A Surfing Life_, which won the 2016 Pulitzer Prize for Autobiography. He is also the
+ author of _Cold New World, A Complicated War_, _Dateline Soweto_ and _Crossing the Line_. He has twice been a National
+  Magazine Award finalist and has won numerous journalism awards, including two Overseas Press Club awards since 2009. _Barbarian Days_ 
+  received the 2016 Pulitzer Prize for Autobiography. A staff writer at The New Yorker since 1987, he lives in Manhattan.`
+},
+{
+name: 'David Helvarg',
+url: 'https://bluefront.org/about-us/staff/',
+image: 'images/authors/davidHelvarg.jpg', 
+text: `David Helvarg is an author and Executive Director of Blue Frontier Campaign (www.bluefront.org). David has written: 
+_Bue Frontier_, _The War Against the Greens_, _50 Ways to Save the Ocean_, _Rescue Warriors_, _Saved by the Sea_, and 
+_The Golden Shore - California\'s Love Affair with the Sea_. In addition to his books, David is editor of the Ocean
+ and Coastal Conservation Guide, organizer of the Peter Benchley Ocean Awards and Blue Vision Summits for ocean activists. He is
+  the winner of Coastal Living Magazine’s 2005 Leadership Award and the 2007 Herman Melville Literary Award.`
+},
+{
+name: 'Jaimal Yogis',
+url: 'https://www.jaimal-yogis.com/',
+image: 'images/authors/jaimal2.jpg', 
+text: `Jaimal is the author of the bestseller _Saltwater Buddha_ – a comedic coming-of-age memoir about how surfing and the
+ sea helped him transition back into the world after a year in a Zen monastery. His second book
+  is _The Fear Project_, which looks at the neuroscience of fear and courage, using science, 
+  mindfulness, and sports to reveal ways in which humans can live more fully. _Saltwater Buddha_ has been adapted into
+   a feature documentary that recently opened in select theaters and film festivals.`
+}
+]
+---
+{% import "_includes/card.njk" as card %}
+
+<h1>Authors</h1>
+
+<div class="cards">
+  {% for bio in authors %}
+    {{ card.card(bio.name, bio.url, bio.image, "greece", bio.text | markdownify | safe) }}
+  {% endfor %}
+</div>

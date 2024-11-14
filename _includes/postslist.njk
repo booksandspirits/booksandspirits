@@ -1,9 +1,24 @@
-{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
+{#%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %#}
 <ol reversed class="postlist">
-{% for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
-{% endfor %}
+  {% for post in postslist | reverse %}
+    <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+
+      <div class="post-wrapper">
+        <div>
+        {% if post.data.hero %}<img class="post-image" alt="post image" src="{{post.data.hero}}" />
+        {% else %}<img class="post-image" alt="post image" src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg" />
+        {% endif %}
+        </div>
+        <div class="flexcolumn">
+          <a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+          <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+          <div class="postlist-description">
+            {% if post.data.description %}{{ post.data.description }}
+            {% else %}foo{% endif %}
+          </a>
+        </div>
+      </div>
+
+    </li>
+  {% endfor %}
 </ol>

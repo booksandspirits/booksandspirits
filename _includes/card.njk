@@ -1,0 +1,61 @@
+{% macro card(title, url, media, mediaAlt, body) %}
+  <div class="card flexcolumn fullwidth">
+    <div class="inline-aligned card-header">
+      <div class="flex">
+        <a class="top0" href="{{url}}"">
+          <img src="{{media}}" alt="{{mediaAlt}}" class="card-avatar image-covers"/>
+        </a>
+      </div>
+      <div class="left10p">
+        <div>
+          <div class="brand-font font-bold font-large">
+            <span class="overflow-ellipsis-2">{{title}}</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-font font-small dont-break-out">
+            <a href="{{url}}">
+              <span class="overflow-ellipsis-2">{{url}}</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>{{body}}</p>
+    </div>
+  </div>
+
+{% endmacro %}
+
+{% macro icard(title, url, media, mediaAlt, body) %}
+  <div class="flexrow fullwidth" style="height: auto; padding-bottom: 1rem; align-items: center;">
+    <div style="width: 15vw; min-width: 15vw; padding-right: 1rem;">
+      <a class="top0" style="width: 100%;" href="{{url}}"">
+        <img src="{{media}}" alt="{{mediaAlt}}" class="image-contains fullwidth" 
+        style="border-radius: 4px;height: auto;"/>
+      </a>
+    </div>
+    <div>
+      <p>{{body}}</p>
+    </div>
+    <hr/>
+  </div>
+{% endmacro %}
+
+{% macro bookcard(title, author, url, media, mediaAlt, body) %}
+  <div class="embed dont-break-out">
+    <a class="embed-link" href="{{ url }}" target="_blank">
+      <div class="embed-card">
+        <div class="card-cover">
+          <img class="image-covers card-cover" src="{{ media }}" alt="{{ mediaAlt }}"/>
+        </div>
+        <div class="card-content">
+          <p class="card-title brand-font card-title">{{ title }}</p>
+          <p class="card-subtitle brand-font font-small">{{ author }}</p>
+          <div class="card-description overflow-ellipsis-lines">{{ body | safe}}...</div>
+          <p class="card-link font-small">🔗 {{ url }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+{% endmacro %}

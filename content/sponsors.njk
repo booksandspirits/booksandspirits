@@ -1,0 +1,73 @@
+---js
+const eleventyNavigation = {
+	key: "Sponsors",
+	order: 5
+};
+
+const sponsors = [
+{  text: `Revolusun Smart Home is graciously allowing us to share their wonderful space!`,
+image: 'images/sponsors/RSH_logo_360x60-300x50.png'},
+
+{  text: `We are delighted to partner with The Hawaii Book and Music Festival to bring you Pulitzer Prize 
+winner Adam Johnson. The Hawaii Book and Music Festival is a unique event in Hawaii. It strives to celebrate and honor
+ books, storytelling and music in way that is fun, accessible, and memorable for people of all ages, backgrounds
+  and tastes.  It strives to introduce Hawaii books and music to the world and to introduce Hawaii to new worlds of books
+   and music. They honor our host culture, explore topics of community interest, and highlight
+    the joy of life-long literacy for all of Hawaii’s people. They strive to present an event that creates joy and excitement
+     about our culture all year round.`,
+image: 'images/sponsors/HBMFestival-300x300.jpg'},
+
+{  text: `Our mixologist and food partner for the September event is Encore Saloon. Encore Saloon is a tequila and mezcal 
+focused bar serving Mexican inspired food in Chinatown Honolulu. They are an Ocean Friendly restaurant and 
+we can’t wait to see what they come up with!`,
+image: 'images/sponsors/EncoreLogo-300x164.png'},
+
+{  text: `Thank you to Southern Glazer’s Wine & Spirits for supplying us with wine!`,
+image: 'images/sponsors/SGWS-logo-300x300.png'},
+
+{  text: `Mahalo to Kona Brewing company for supplying us beer!`,
+image: 'images/sponsors/kona-300x226.jpeg'},
+
+{  text: `Ocean Vodka is graciously providing spirits for the event.`,
+image: 'images/sponsors/OceanVodkaLogo.jpg'},
+
+{  text: `Pang Communications is helping us spread the word and assisting with event logistics.`,
+image: 'images/sponsors/pangcommlogo-300x94.jpg'}
+];
+
+const prevSponsors = [
+{  text: `Our mixologist and food sponsor for the November event was the Koko Head Cafe,led by Chef Lee Ann Wong. Koko Head Cafe was also one of Oahu’s first Ocean Friendly Restaurants, as certified by the Surfrider Foundation.`,
+image: 'images/sponsors/kokoheadcafe_final1-300x227.png'},
+
+{  text: `Our mixologist and food sponsor for the August event was Mud Hen Water.`,
+image: 'images/sponsors/mudhen-logo-300x153.jpg'},
+
+{  text: `Our mixologist and food sponsor for the September event is Christian Self of Bevy! Yay!`,
+image: 'images/sponsors/bevy-150x150.jpg'},
+
+{  text: `Our mixologist and food sponsor for the November event is the Nook! The Nook won the Honolulu Star-Advertiser’s 
+Critic’s Choice I’lima Award for Best Casual Restaurant in 2015! We’re looking forward to see what co-owners Anicea Campanale and
+ Hailey Berkey whip up!`,
+image: 'images/sponsors/nook-logo-300x147.jpg'}
+]
+
+---
+{% import "_includes/card.njk" as card %}
+
+<h1>Sponsors</h1>
+
+<p>Contributions and participation from a few awesome sponsors help us bring you Books & Spirits. We thank them for helping spread the love of books and community. Mahalo!</p>
+
+<div class="flex flexcolumn fullwidth">
+  {% for bio in sponsors %}
+    {{ card.icard("", "", bio.image, "", bio.text | markdownify | safe) }}
+  {% endfor %}
+</div>
+
+<p>Previous Sponsors Include:</p>
+
+<div class="flex flexcolumn fullwidth">
+  {% for bio in prevSponsors %}
+    {{ card.icard("", "", bio.image, "", bio.text | markdownify | safe) }}
+  {% endfor %}
+</div>

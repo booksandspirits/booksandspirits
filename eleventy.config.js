@@ -4,16 +4,42 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+
+import markdownIt from "markdown-it";
+const markdownItRenderer = new markdownIt();
+import markdownItAttrs from "markdown-it-attrs";
+
 import pluginFilters from "./_config/filters.js";
+import { FontAwesomeIcon, getAvailableIcons, isIconAvailable } from "@campj/eleventy-fa-icons";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
+
+  eleventyConfig.addNunjucksShortcode("FontAwesomeIcon", FontAwesomeIcon);
+  // add markdown filter
+  eleventyConfig.addFilter('markdownify', (str) => {
+    return markdownItRenderer.renderInline(str)
+  })
+
 	// Drafts, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
 		}
 	});
+
+  // mainly to add classes to the markdown parser. e.g. to add classes to images in markdown
+  // https://dev.to/giulia_chiola/add-html-classes-to-11ty-markdown-content-18ic
+  const markdownItOptions = {
+    html: true,
+    breaks: true,
+    linkify: true
+  }
+  
+  const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
+  eleventyConfig.setLibrary('md', markdownLib)
+
 
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -22,6 +48,9 @@ export default async function(eleventyConfig) {
 			"./public/": "/"
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
+
+  eleventyConfig.addPassthroughCopy("./content/images/");
+  eleventyConfig.addPassthroughCopy('./content/src/fonts/');
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
@@ -46,16 +75,17 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"
 		outputPath: "/feed/feed.xml",
 		stylesheet: "pretty-atom-feed.xsl",
 		templateData: {
-			eleventyNavigation: {
-				key: "Feed",
-				order: 4
-			}
+			// eleventyNavigation: {
+			// 	key: "Feed",
+			// 	order: 4
+			// }
 		},
 		collection: {
 			name: "posts",
@@ -63,11 +93,11 @@ export default async function(eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "Books & Spirits blog",
+			subtitle: "The Books & Spirits book event series blog.",
+			base: "https://www.booksandspirits.com/",
 			author: {
-				name: "Your Name"
+				name: "Books & Spirits"
 			}
 		}
 	});

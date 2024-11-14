@@ -1,7 +1,7 @@
 {
-	"name": "eleventy-base-blog",
+	"name": "books-and-spirits",
 	"version": "9.0.0",
-	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"description": "The repository for the books and spirits blog.",
 	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
@@ -18,34 +18,30 @@
 		"url": "git://github.com/11ty/eleventy-base-blog.git"
 	},
 	"author": {
-		"name": "Zach Leatherman",
-		"email": "zachleatherman@gmail.com",
-		"url": "https://zachleat.com/"
+		"name": "Mark Watkins",
+		"email": "mark.watkins1@gmail.com",
+		"url": "https://www.booksandspirits.com/"
 	},
 	"license": "MIT",
 	"engines": {
 		"node": ">=18"
 	},
-	"funding": {
-		"type": "opencollective",
-		"url": "https://opencollective.com/11ty"
-	},
-	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
-	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"homepage": "https://www.booksandspirits.com",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
 		"@11ty/eleventy-img": "^5.0.0",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@campj/eleventy-fa-icons": "^0.0.7",
 		"cross-env": "^7.0.3",
 		"luxon": "^3.5.0",
 		"zod": "^3.23.8",
 		"zod-validation-error": "^3.3.1"
 	},
 	"dependencies": {
-		"@zachleat/heading-anchors": "^1.0.1"
+		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"@zachleat/heading-anchors": "^1.0.1",
+		"markdown-it-attrs": "^4.2.0"
 	}
 }

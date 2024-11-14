@@ -1,11 +1,16 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
+	title: "Books & Spirits",
+  titleE: "Books &amp; Spirits",
+	url: "https://www.booksandspirits.com/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "The Books & Spirits book event series. Where Readers and Authors Meet.",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
-	}
+		name: "Books & Spirits",
+		email: "info@booksandspirits.com",
+		url: "https://www.booksandspirits.com/"
+	},
+  twitter: 'booksandspirits',
+  instagram: 'booksandspirits',
+  facebook: 'booksandspirits',
+  image: 'images/Books_Spirits_Header_Square.jpg'
 }
