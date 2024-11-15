@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books &amp; Spirits</title>
+    <title>The Saltwater Cure: A Review of David Helvarg’s Saved By the Sea</title>
     <meta name="description" content="The Books &amp; Spirits book event series. Where Readers and Authors Meet.">
     <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="Books &amp; Spirits">
 
@@ -23,7 +23,175 @@
     <meta name="color-scheme" content="light dark">
     
 
-    <style>/* This is an arbitrary CSS string added to the bundle */
+    <style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
   --font-family: Lato, -apple-systemX, system-ui, sans-serif;
@@ -714,7 +882,7 @@ h6 {
                 <a class="header-color" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/blog/" aria-current="page">Events</a>
+                <a class="header-color" href="/blog/">Events</a>
               </li>
               <li class="nav-item">
                 <a class="header-color" href="/authors/">Authors</a>
@@ -801,347 +969,34 @@ h6 {
     <main id="skip">
       <heading-anchors>
         
+<h1 id="the-saltwater-cure-a-review-of-david-helvarg-s-saved-by-the-sea">The Saltwater Cure: A Review of David Helvarg’s Saved By the Sea</h1>
 
+<ul class="post-metadata">
+	<li>Posted on <time datetime="2016-09-08">08 September 2016</time></li>
+	
+	<li><a href="/tags/events/" class="post-tag">Events</a></li>
+</ul>
 
-<h1 id="events">Events</h1>
+<div class="post">
+<p>(a profile of David Helvarg, by Stuart Holmes Coleman)</p>
+<p>Like the Olympics, the International Union for the Conservation of Nature (IUCN) only meets every four years and brings together some of the best and brightest minds from around the globe to help protect and preserve our natural world. Hawaii is lucky to be the first U.S. state ever to host the event, but our island home also has to face the serious challenges of climate change, sea level rise, extinction and pollution of our land and waters.</p>
+<p>Hawaii’s greatest waterman Duke Kahanamoku used to tell locals and visitors alike, Never turn your back on the ocean. He said this as a warning about water safety, but it also had to do with respect and environmental stewardship. <em>Malama i ke kai</em>. Take care of the ocean, and she will take care of us, as Rell Sunn used to say. But modern culture has turned its back on the ocean and its endangered creatures, and we are now beginning to suffer the consequences.</p>
+<p>Ever since the publication of his wave-making book <em>Blue Frontier</em> in 2001, David Helvarg has become the premiere chronicler of America’s complex relationship with our oceans and coasts, our last frontier. He writes that our tempestuous love affair with the sea has gradually become abusive, with constant assaults from over-fishing, water pollution, climate change, oil spills and destruction of our wetlands. His next book <em>50 Ways to Save the Ocean</em> tried to turn the tide by coming up with practical ways each one of us can help protect our marine environment. Although it’s been a losing battle, Helvarg has never turned his back on the ocean.</p>
+<p>In his book <em>Saved by the Sea: A Love Story with Fish</em> (New World Books, ’15), Helvarg adds a new and moving dimension to his work by exploring his own personal relationships with the ocean and the three main women in his life: mother, girlfriend and sister. As he describes the declining health of the seas, he also writes about the illnesses that would take away those closest to him. Like a modern day Job, his life is beset with tragic losses and difficulties. But he finds joy and meaning in his personal struggle to save the ocean.</p>
+<p>Helvarg has come to Honolulu as a presenter at the IUCN and will be helping to lead a presentation on the importance of bio-narratives and storytelling in conveying scientific ideas and conservation policies to the general public. He will also be the next author in the new Books &amp; Spirits series, which features award-winning writers and culinary sponsors who prepare literary-themed cocktails and pupu for each event. For Helvarg’s talk, the renowned mixologist Christian Self of Bevy has created a special cocktail called a Seaweed Rebel in honor of the author and all those who fight to save the sea. On Thur., Sept. 8th, from 6:30-8:30pm at RevoluSun Smart Home, Helvarg will talk about his memoir <em>Saved by the Sea</em> and his journey to protect and explore the blue frontier.</p>
+<p>A jack of all trades, Helvarg describes his evolution as a political activist, war reporter, private investigator, environmental journalist and ocean activist. Throughout the memoir, he weaves together intriguing stories from his adventurous life: his dark family history and bizarre career changes; exotic travels to the melting poles and deep dives in the tropics; romantic love affairs and heartbreaking losses; and close encounters with death and destruction, from the Gulf of Mexico to the Persian Gulf.</p>
+<p>The son of Holocaust survivors, Helvarg grew up on the East Coast with his mother and sister, not far from the ocean. His mother was politically active, and he came of age during the modern environmental movement of the 60’s and 70’s. After snorkeling during a trip to Key West as a teenager, he became a lifelong diver and avid student of marine life. He studied journalism in college and took part in student demonstrations. But after his mom died of lung cancer, he became a war reporter in Ireland and then Central America, where war “proved to be an effective antidote to depression after my parents’ deaths.”</p>
+<p>After burning out on war reporting, Helvarg moves to San Diego and finds peace living by the sea. Working part-time as a private investigator, he spends much of his time bodysurfing and diving. He eventually meets a fellow ocean-lover named Nancy, and they become inseparable. Living in San Francisco, the pair spends all their money flying to remote places like Australia’s Great Barrier Reef so they dive and experience one of the few remaining pristine coral reefs. Helvarg’s descriptions of diving in these undersea habitats are breath-taking, but it’s heart-breaking to learn that most of the world’s reefs are in rapid decline.</p>
+<p>The most moving part of this memoir comes when Nancy develops breast cancer. Although the two had separated, she clearly remains the love of his life, and he stands by her side during the last months of her life. Like Hawaii’s Rell Sunn, she finds healing in the ocean until the very end. Before her death, Rell wondered if the prevalence of cancer in our age was a direct result of our pollution of the land and sea. Years later, Helvarg’s sister dies of cancer as well, leaving behind two sons.</p>
+<p>Devastated by their premature deaths, Helvarg writes about finding some comfort in the ocean’s warm embrace. As the writer Isaac Dineson once wrote, “The cure for anything is salt water: sweat, tears or the sea.” He has had his fill of sweat and tears but never tires of being in the ocean. This is where all life originated, and it is where many of our ashes will be scattered one day.</p>
+<p>In the end, Helvarg’s <em>Saved By the Sea</em> is about survival. That’s why the author continues his crusade to write and educate people about the declining health of our oceans. “After a time of pain and uncertainty, I determined to fight for the one love that that still might (or might not) be saved, the one I will always return to, whether for wave-gliding fun or as light gray ash. In seeking to protect our mother ocean, I will also assure myself continued risk and adventure, a larger social purpose for living, and perhaps even the occasional moment of transcendence, something any one of us might aspire to by taking the plunge.”</p>
+<p>Helvarg’s final question to the reader seems to be: Will you turn your back on the ocean or take the plunge to help save her?</p>
+<p>For more info about David Helvarg and his talk at Books &amp; Spirits, go to <a href="http://www.booksandspirits.com">BooksAndSpirits.com</a>.</p>
+<p>(Stuart H. Coleman is the Hawaii Manager of the Surfrider Foundation and the author of <em>Eddie Would Go</em> and <em>Fierce Heart</em>.)</p>
 
-
-
-<ol reversed="" class="postlist">
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/2z9cx5tVLq-1024.avif 1024w"><source type="image/webp" srcset="/blog/2z9cx5tVLq-1024.webp 1024w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/2z9cx5tVLq-1024.jpeg" width="1024" height="800"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/a-virtual-conversation-with-jim-wallis-march-27/" class="postlist-link">A virtual conversation with Jim Wallis, March 27!</a>
-          <time class="postlist-date" datetime="2021-03-17">March 2021</time>
-          <div class="postlist-description">
-            In collaboration with Rev. David Turner and Church of the Crossroads in Honolulu, we at Books &amp; Spirits are excited to host &#39;A Virtual Conversation&#39; (via Zoom) with Rev. Jim Wallis, a leading voice of Progressive Christianity.
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/9R8xQwKoTL-330.avif 330w"><source type="image/webp" srcset="/blog/9R8xQwKoTL-330.webp 330w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/9R8xQwKoTL-330.jpeg" width="330" height="500"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/stuart-coleman-on-cspan/" class="postlist-link">Stuart Coleman on CSpan</a>
-          <time class="postlist-date" datetime="2018-10-15">October 2018</time>
-          <div class="postlist-description">
-            Stuart was recently interviewed by CSpan for their Local Cities program, as well as for Book TV.
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/rSJ_svsM7E-1024.avif 1024w"><source type="image/webp" srcset="/blog/rSJ_svsM7E-1024.webp 1024w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/rSJ_svsM7E-1024.jpeg" width="1024" height="1365"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/marcus-eriksen-presented-by-books-and-spirits-in-partnership-with-uh-manoa-speaker-series/" class="postlist-link">Marcus Eriksen, presented by Books &amp; Spirits in partnership with UH Manoa Speaker Series</a>
-          <time class="postlist-date" datetime="2018-07-30">July 2018</time>
-          <div class="postlist-description">
-            Aloha! Books &amp; Spirits is delighted to get back in action!
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/ou0kAkTGAr-2000.avif 2000w"><source type="image/webp" srcset="/blog/ou0kAkTGAr-2000.webp 2000w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/ou0kAkTGAr-2000.jpeg" width="2000" height="890"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/fun-at-the-hawaii-books-and-music-festival-and-our-next-event/" class="postlist-link">Fun at the Hawaii Books &amp; Music Festival...and our next event!</a>
-          <time class="postlist-date" datetime="2018-05-17">May 2018</time>
-          <div class="postlist-description">
-            Aloha! Sorry for our long absence!
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/writers-check-out-the-koolau-writers-workshop-2018/" class="postlist-link">Writers! Check out the Ko`olau Writers Workshop 2018!</a>
-          <time class="postlist-date" datetime="2018-03-27">March 2018</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/-RalXP1Lez-240.avif 240w"><source type="image/webp" srcset="/blog/-RalXP1Lez-240.webp 240w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/-RalXP1Lez-240.jpeg" width="240" height="363"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/six-lessons-from-the-sea-by-jaimal-yogis/" class="postlist-link">Six Lessons from the Sea by Jaimal Yogis</a>
-          <time class="postlist-date" datetime="2017-08-26">August 2017</time>
-          <div class="postlist-description">
-            After a couple of decades of surfing and traveling, and writing about surfing and traveling, these are six lessons that I use every day.
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/ivY4bdF3fJ-150.avif 150w"><source type="image/webp" srcset="/blog/ivY4bdF3fJ-150.webp 150w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/ivY4bdF3fJ-150.jpeg" width="150" height="150"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/our-next-event-with-pulitzer-prize-winner-adam-johnson/" class="postlist-link">Our next event, with Pulitzer Prize winner Adam Johnson</a>
-          <time class="postlist-date" datetime="2017-08-18">August 2017</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/see-the-abrams-at-university-of-hawai-i/" class="postlist-link">See the Abrams at University of Hawai&#39;i</a>
-          <time class="postlist-date" datetime="2017-03-02">March 2017</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/M6a1Pz6bdp-220.avif 220w"><source type="image/webp" srcset="/blog/M6a1Pz6bdp-220.webp 220w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/M6a1Pz6bdp-220.jpeg" width="220" height="300"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/doug-abrams-the-book-of-joy-and-rachel-carlton-abrams-bodywise-feb-28th/" class="postlist-link">Doug Abrams (The Book of Joy) and Rachel Carlton Abrams (Bodywise), Feb 28th!</a>
-          <time class="postlist-date" datetime="2017-01-20">January 2017</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/a-review-of-barbarian-days-from-the-maui-time/" class="postlist-link">A review of Barbarian Days from the Maui Time</a>
-          <time class="postlist-date" datetime="2016-12-04">December 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/william-finnegan-is-sold-out/" class="postlist-link">William Finnegan is Sold Out!</a>
-          <time class="postlist-date" datetime="2016-11-30">November 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/UfCfKIOw3M-300.avif 300w"><source type="image/webp" srcset="/blog/UfCfKIOw3M-300.webp 300w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/UfCfKIOw3M-300.jpeg" width="300" height="150"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/william-finnegan-november-30th/" class="postlist-link">William Finnegan - November 30th!</a>
-          <time class="postlist-date" datetime="2016-11-18">November 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/william-finnegan-author-of-barbarian-days-a-surfing-life-november-30th/" class="postlist-link">William Finnegan, author of Barbarian Days, A Surfing Life. November 30th!!</a>
-          <time class="postlist-date" datetime="2016-11-04">November 2016</time>
-          <div class="postlist-description">
-            Hi Folks,
-Due to unforeseen circumstances, Kaui Hart Hemmings will not be able to join us on November.
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/david-helvarg-seaweed-rebel/" class="postlist-link">David Helvarg, Seaweed Rebel</a>
-          <time class="postlist-date" datetime="2016-09-29">September 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/the-saltwater-cure-a-review-of-david-helvarg-s-saved-by-the-sea/" class="postlist-link">The Saltwater Cure: A Review of David Helvarg’s Saved By the Sea</a>
-          <time class="postlist-date" datetime="2016-09-08">September 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/t1jQGNNjHz-150.avif 150w"><source type="image/webp" srcset="/blog/t1jQGNNjHz-150.webp 150w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/t1jQGNNjHz-150.jpeg" width="150" height="150"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/sept-8-david-helvarg/" class="postlist-link">Sept 8 - David Helvarg</a>
-          <time class="postlist-date" datetime="2016-08-24">August 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/U9v_fjQLcw-675.avif 675w"><source type="image/webp" srcset="/blog/U9v_fjQLcw-675.webp 675w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/U9v_fjQLcw-675.jpeg" width="675" height="675"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/and-a-good-time-was-had-by-all/" class="postlist-link">And a good time was had by all...</a>
-          <time class="postlist-date" datetime="2016-08-24">August 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-    <li class="postlist-item">
-
-      <div class="post-wrapper">
-        <div>
-        <picture><source type="image/avif" srcset="/blog/D-f0-kQoKK-150.avif 150w"><source type="image/webp" srcset="/blog/D-f0-kQoKK-150.webp 150w"><img loading="lazy" decoding="async" class="post-image" alt="post image" src="/blog/D-f0-kQoKK-150.jpeg" width="150" height="150"></picture>
-        
-        </div>
-        <div class="flexcolumn">
-          <a href="/august-18-jaimal-yogis/" class="postlist-link">August 18 - Jaimal Yogis</a>
-          <time class="postlist-date" datetime="2016-06-29">June 2016</time>
-          <div class="postlist-description">
-            
-          
-        </div>
-      </div>
-
-    </div></li>
-  
-</ol>
-
+</div>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/sept-8-david-helvarg/">Sept 8 - David Helvarg</a></li><li class="links-nextprev-next">Next →<br><a href="/david-helvarg-seaweed-rebel/">David Helvarg, Seaweed Rebel</a></li>
+</ul>
 
       </heading-anchors>
     </main>
@@ -1176,7 +1031,7 @@ Due to unforeseen circumstances, Kaui Hart Hemmings will not be able to join us 
             </a></a></a></div>
           </footer>
 
-          <!-- This page `/blog/` was built on 2024-11-15T23:51:04.067Z -->
+          <!-- This page `/the-saltwater-cure-a-review-of-david-helvarg-s-saved-by-the-sea/` was built on 2024-11-15T23:51:04.065Z -->
           <script type="module" src="/dist/rJ3_G-2ArF.js"></script>
         </body>
       </html>
