@@ -7,12 +7,29 @@ const eleventyNavigation = {
 const numberOfLatestPostsToShow = 3;
 ---
 
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set post = postslist[2] %}
+<div class="post-wrapper">
+        <div style="padding-bottom: 1rem;">
+        {% if post.data.hero %}<img class="post-image post-image-hero" alt="post image" src="{{post.data.hero}}" />
+        {% else %}<img class="post-image post-image-hero" alt="post image" src="images/Books_Spirits_Header_Square.jpg" />
+        {% endif %}
+        </div>
+        <div class="flexcolumn" style="gap: 1rem;">
+          <a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+          {# <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time> #}
+          <div class="postlist-description">
+            {% if post.data.description %}{{ post.data.description }}
+            {% else %}{% endif %}
+          </a>
+        </div>
+      </div>
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-</h1>
+<h1>Latest News</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{# {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %} #}
 {#% set postslistCounter = postsCount %#}
 {% include "postslist.njk" %}
 

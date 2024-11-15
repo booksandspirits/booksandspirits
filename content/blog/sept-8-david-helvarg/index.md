@@ -3,6 +3,7 @@ title: "Sept 8 - David Helvarg"
 date: "2016-08-24"
 categories: 
   - "Events"
+hero: blog/sept-8-david-helvarg/images/davidHelvarg-150x150.jpg
 ---
 
 ![](images/davidHelvarg-150x150.jpg){: .image-float-left} Our second event will feature David Helvarg, the author of [_The Golden Shore_](https://www.amazon.com/Golden-Shore-Californias-Love-Affair/dp/0312664966/ref=as_li_ss_tl?s=books&ie=UTF8&qid=1471991691&sr=1-9&keywords=david+helvarg&linkCode=ll1&tag=codexmap-20&linkId=9d5cafc77c3b5739692719e2f5332eb0) and [_Saved by the Sea._](https://www.amazon.com/Saved-Sea-Heartbreak-Wonder-World-ebook/dp/B00V20LJOS/ref=as_li_ss_tl?s=books&ie=UTF8&qid=1471991691&sr=1-10&keywords=david+helvarg&linkCode=ll1&tag=codexmap-20&linkId=a992e3a0c2b91895b95eb2269ec35424)David is the Executive Director of Blue Frontier Campaign (www.bluefront.org). He is the winner of Coastal Living Magazine’s 2005 Leadership Award and the 2007 Herman Melville Literary Award. David has written a number of influential books about ocean-related issues, including Bue Frontier, The War Against the Greens, 50 Ways to Save the Ocean, Rescue Warriors, Saved by the Sea, and The Golden Shore - California's Love Affair with the Sea. In addition to his books, David is editor of the Ocean and Coastal Conservation Guide, organizer of the Peter Benchley Ocean Awards and Blue Vision Summits for ocean activists.

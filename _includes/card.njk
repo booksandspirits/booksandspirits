@@ -28,8 +28,8 @@
 {% endmacro %}
 
 {% macro icard(title, url, media, mediaAlt, body) %}
-  <div class="flexrow fullwidth" style="height: auto; padding-bottom: 1rem; align-items: center;">
-    <div style="width: 15vw; min-width: 15vw; padding-right: 1rem;">
+  <div class="icard flexrow fullwidth" style="height: auto; padding-bottom: 1rem; align-items: center;">
+    <div class="icard-image-wrapper">
       <a class="top0" style="width: 100%;" href="{{url}}"">
         <img src="{{media}}" alt="{{mediaAlt}}" class="image-contains fullwidth" 
         style="border-radius: 4px;height: auto;"/>

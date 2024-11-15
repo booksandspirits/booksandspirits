@@ -3,6 +3,7 @@ title: "Our next event, with Pulitzer Prize winner Adam Johnson"
 date: "2017-08-18"
 categories: 
   - "Events"
+hero: blog/our-next-event-with-pulitzer-prize-winner-adam-johnson/images/Fortune-Smiles-Cover-Medium-150x150.jpg
 ---
 
 ![](images/Fortune-Smiles-Cover-Medium-150x150.jpg){: .image-float-left} 

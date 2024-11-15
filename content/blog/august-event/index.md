@@ -3,6 +3,7 @@ title: "August 18 - Jaimal Yogis"
 date: "2016-06-29"
 categories: 
   - "Events"
+hero: blog/august-event/images/jaimal2-150x150.jpg
 ---
 
 ![Jaimal Yogis](images/jaimal2-150x150.jpg){: .image-float-left}Our first event will feature Jaimal Yogis, the author of **_The Saltwater Buddha_** and **_The Fear Project._** Jaimal is the author of the bestsellers [Saltwater Buddha](http://www.amazon.com/gp/product/0861715357/ref=as_li_tf_tl?ie=UTF8&tag=jainikyog-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0861715357) – a comedic coming-of-age memoir about how surfing and the sea helped him transition back into the world after a year in a Zen monastery.  He also authored [The Fear Project](https://www.amazon.com/Fear-Project-Emotion-Survival-Success/dp/1609611756/ref=sr_1_1?ie=UTF8&qid=1468312854&sr=8-1&keywords=The+Fear+Project), which looks at the neuroscience of fear and courage, using science, mindfulness, and sports to reveal ways in which humans can live more fully. Saltwater Buddha has been adapted into a [feature documentary](http://www.saltwaterbuddha.org/) that recently opened in select theaters and film festivals.

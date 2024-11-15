@@ -3,6 +3,7 @@ title: "Marcus Eriksen, presented by Books & Spirits in partnership with UH Mano
 date: "2018-07-30"
 categories: 
   - "Events"
+hero: blog/marcus-eriksen-presented-by-books-spirits-in-partnership-with-uh-manoa-speaker-series/images/Screening-Flyer-Marcus-Eriksen-compressed.jpg
 ---
 
 Aloha!

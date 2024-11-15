@@ -3,6 +3,7 @@ title: "William Finnegan - November 30th!"
 date: "2016-11-18"
 categories: 
   - "Events"
+hero: blog/304-2/images/WilliamFinneganCombo-300x150.jpg
 ---
 
 ![williamfinnegancombo](images/WilliamFinneganCombo-300x150.jpg){: .image-float-left}Our November 30th event is shaping up nicely! We are delighted to welcome **William Finnegan** to the November 30th Books & Spirits. William is the author of _Barbarian Days: A Surfing Life_, which won the 2016 Pulitzer Prize for Autobiography!

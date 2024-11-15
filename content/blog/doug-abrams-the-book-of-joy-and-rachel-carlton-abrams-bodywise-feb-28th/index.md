@@ -3,6 +3,7 @@ title: "Doug Abrams (The Book of Joy) and Rachel Carlton Abrams (Bodywise), Feb 
 date: "2017-01-20"
 categories: 
   - "Events"
+hero: blog/doug-abrams-the-book-of-joy-and-rachel-carlton-abrams-bodywise-feb-28th/images/Doug-Abrams-220x300.jpg
 ---
 
 Our fourth event will combine body, mind and spirit through a pair of unique and insightful authors.

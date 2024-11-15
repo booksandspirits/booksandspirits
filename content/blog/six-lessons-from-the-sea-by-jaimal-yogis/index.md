@@ -3,6 +3,7 @@ title: "Six Lessons from the Sea by Jaimal Yogis"
 date: "2017-08-26"
 categories: 
   - "Events"
+hero: blog/six-lessons-from-the-sea-by-jaimal-yogis/images/ALL-OUR-WAVES-ARE-WATER-hc-c_1.jpg
 ---
 
 [![All Our Waves Are Water](images/ALL-OUR-WAVES-ARE-WATER-hc-c_1.jpg "All Our Waves Are Water")](http://amzn.to/2t9nFDZ)
