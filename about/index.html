@@ -23,8 +23,679 @@
     <meta name="color-scheme" content="light dark">
     
 
+    <style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+  --font-family: Lato, -apple-systemX, system-ui, sans-serif;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family-brand: 'Libre Baskerville';
+}
+
+/* Theme colors */
+:root {
+  --color-gray-20: #e0e0e0;
+  --color-gray-50: #C0C0C0;
+  --color-gray-90: #333;
+
+  --background-color: #fff;
+
+  --text-color: var(--color-gray-90);
+  --text-color-link: #082840;
+  --text-color-link-active: #5f2b48;
+  --text-color-link-visited: #17050F;
+
+  --syntax-tab-size: 2;
+
+  --text-header-color: white;
+  --header-height: 20vh;
+  --main-color: rgba(31, 205, 216, 1.00);
+  --border-gray: #D2D2D2;
+  --transparent-gray: rgba(0, 0, 0, 0.12);
+  --social-icon-size: 2rem;
+  --footer-separator-color: rgb(240, 240, 240);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-20: #e0e0e0;
+    --color-gray-50: #C0C0C0;
+    --color-gray-90: #dad8d8;
+
+    /* --text-color is assigned to --color-gray-_ above */
+    --text-color-link: #1493fb;
+    --text-color-link-active: #6969f7;
+    --text-color-link-visited: #a6a6f8;
+
+    --background-color: #15202b;
+  }
+}
+
+
+/* Global stylesheet */
+* {
+  box-sizing: border-box;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/* body {
+	max-width: 50em;
+} */
+
+main,
+footer {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+footer hr {
+  border-top: 1px solid var(--footer-separator-color);
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+li {
+  line-height: 1.5;
+}
+
+a[href] {
+  color: var(--text-color-link);
+}
+
+a[href]:visited {
+  color: var(--text-color-link-visited);
+}
+
+a[href]:hover,
+a[href]:active {
+  color: var(--text-color-link-active);
+}
+
+main,
+footer {
+  padding: 1rem;
+}
+
+main :first-child {
+  margin-top: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 1em; */
+  min-height: var(--header-height);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(/images/Books_Spirits_Header_1024.jpg);
+  background-color: rgba(28, 38, 51, 0.65);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-bottom: 1px dashed var(--color-gray-20);
+}
+
+.header-contents {
+  display: flex;
+  gap: 1em .5em;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.header-color {
+  color: var(--text-header-color) !important;
+}
+
+.links-nextprev {
+  display: flex;
+  justify-content: space-between;
+  gap: .5em 1em;
+  list-style: "";
+  border-top: 1px dashed var(--color-gray-20);
+  padding: 1em 0;
+}
+
+.links-nextprev>* {
+  flex-grow: 1;
+}
+
+.links-nextprev-next {
+  text-align: right;
+}
+
+table {
+  margin: 1em 0;
+}
+
+table td,
+table th {
+  padding-right: 1em;
+}
+
+pre,
+code {
+  font-family: var(--font-family-monospace);
+}
+
+pre:not([class*="language-"]) {
+  margin: .5em 0;
+  line-height: 1.375;
+  /* 22px /16 */
+  -moz-tab-size: var(--syntax-tab-size);
+  -o-tab-size: var(--syntax-tab-size);
+  tab-size: var(--syntax-tab-size);
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-x: auto;
+}
+
+code {
+  word-break: break-all;
+}
+
+.home-link {
+  font-family: var(--font-family-brand);
+  font-style: italic;
+}
+
+.home-link:link:not(:hover) {
+  text-decoration: none;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+  text-transform: uppercase;
+}
+
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
+}
+
+.nav a[href][aria-current="page"] {
+  text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+  /* padding-left: 1.5rem; */
+}
+
+.postlist-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
+}
+
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  /* content: "" counter(start-from, decimal-leading-zero) ". "; */
+  line-height: 100%;
+  text-align: right;
+  /* margin-left: -1.5rem; */
+}
+
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em;
+  /* 13px /16 */
+  color: var(--color-gray-90);
+}
+
+.postlist-date {
+  word-spacing: -0.5px;
+  padding-bottom: 0.25rem;
+}
+
+.postlist-description {
+  font-family: italic;
+}
+
+.postlist-link {
+  font-size: 1.1875em;
+  /* 19px /16 */
+  font-weight: 700;
+  flex-basis: calc(100% - 1.5rem);
+  /* padding-left: .25em; */
+  /* padding-right: .5em; */
+  max-height: fit-content;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+  /* kills the above... */
+  text-decoration: none;
+}
+
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  /* font-style: italic; */
+}
+
+.postlist-item>.post-tag {
+  align-self: center;
+}
+
+.postlist-item .post-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-image {
+  width: 6rem;
+  height: 6rem;
+  max-width: unset;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 1rem;
+  border-radius: 8px;
+}
+
+.post-image-hero {
+  width: 100%;
+  height: auto;
+}
+
+.post {
+  padding-top: 0.5rem;
+}
+
+.post img:not(.card-cover) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post a {
+  color: #1fcdd8;
+}
+
+/* Tags list */
+.post-metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-metadata time {
+  margin-right: 1em;
+}
+
+/* fonts and utilities */
+.brand-font {
+  font-family: var(--font-family-brand);
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-uppercase {
+  text-transform: uppercase;
+}
+
+.font-huge {
+  font-size: 2rem;
+}
+
+.font-large {
+  font-size: 1.25rem;
+}
+
+.font-small {
+  font-size: 0.75rem;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('/src/fonts/Lato/Lato-Black.tff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('/src/fonts/Lato/Lato-Bold.tff');
+  /* src: url('/src/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf'); */
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('/src/fonts/Lato/Lato-Italic.tff');
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('/src/fonts/Lato/Lato-BoldItalic.tff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/src/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf');
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/src/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
+  font-display: swap;
+}
+
+
+/* @font-face {
+	font-family: 'Libre Baskerville';
+  src: url('/src/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf');
+	font-weight: 400;
+	font-display: swap;
+} */
+
+
+.top0 {
+  margin-top: 0px !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-aligned {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.left10p {
+  padding-left: 10px;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+/* migrate from old blog */
+.image-covers {
+  object-fit: cover;
+  object-position: top;
+  /* width: 100%;
+  height: 100%; */
+  display: block;
+}
+
+.image-contains {
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.image-float-left {
+  float: left;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.image-float-right {
+  float: right;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: rows;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0px 1px 1px var(--transparent-gray), 0 2px 2px var(--transparent-gray), 0 4px 4px var(--transparent-gray), 0 8px 8px var(--transparent-gray), 0 16px 16px var(--transparent-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-title {
+  margin-bottom: 0rem;
+}
+
+.card-subtitle {
+  margin-top: 0px;
+}
+
+.card-header {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+
+.card-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.card-cover {
+  width: 9rem;
+  max-height: 100%;
+  background-size: cover;
+  border-right: 1px solid #dddddd;
+}
+
+.card-cover img {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.card-content {
+  width: 50%;
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+h6 {
+  margin-top: 0.5rem;
+}
+
+.card-description {
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.card-link {
+  margin-top: 0;
+  line-height: 1;
+  margin-top: auto !important;
+}
+
+.icard-image-wrapper {
+  width: 15vw;
+  min-width: 15vw;
+  padding-right: 1rem;
+}
+
+.social-icons {
+  font-size: 3.5rem;
+  display: flex;
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+  margin: 2px;
+}
+
+.small-action-icon {
+  width: calc(0.5 * var(--social-icon-size));
+  height: calc(0.5 * var(--social-icon-size));
+}
+
+/* embedded cards (thp links, etc) */
+.embed {
+  margin: 0 0 1.3em;
+}
+
+/* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.embed-card {
+  display: flex;
+  height: calc(1.55 * 9rem);
+  min-height: calc(1.55 * 9rem);
+  background: whitesmoke;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.embed-link,
+.embed-link:visited,
+.embed-link:hover .embed-link:not(.btn):hover {
+  text-decoration: none !important;
+  color: #3d4144;
+}
+
+
+.overflow-ellipsis-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .icard {
+    flex-direction: column;
+  }
+
+  .icard-image-wrapper {
+    width: 33vw;
+    min-width: 33vw;
+  }
+}</style>
     
-    <link rel="stylesheet" href="/eleventy-base-blog/dist/ggyc9px9k7.css">
   </head>
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -33,29 +704,29 @@
       <div class="header-contents">
         
         <div class="flexcolumn" style="padding-leftX: 2rem;">
-          <a href="/eleventy-base-blog/" class="home-link brand-font font-huge header-color">Books &amp; Spirits</a>
+          <a href="/" class="home-link brand-font font-huge header-color">Books &amp; Spirits</a>
           <div class="font-uppercase">Where readers and authors meet</div>
         </div>
         <nav>
           <h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
           <ul class="nav">
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/">Home</a>
+                <a class="header-color" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/blog/">Events</a>
+                <a class="header-color" href="/blog/">Events</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/authors/">Authors</a>
+                <a class="header-color" href="/authors/">Authors</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/bookshelf/">Bookshelf</a>
+                <a class="header-color" href="/bookshelf/">Bookshelf</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/sponsors/">Sponsors</a>
+                <a class="header-color" href="/sponsors/">Sponsors</a>
               </li>
               <li class="nav-item">
-                <a class="header-color" href="/eleventy-base-blog/about/" aria-current="page">About us</a>
+                <a class="header-color" href="/about/" aria-current="page">About us</a>
               </li>
             
           </ul>
@@ -138,8 +809,8 @@
  
   <div class="icard flexrow fullwidth" style="height: auto; padding-bottom: 1rem; align-items: center;">
     <div class="icard-image-wrapper">
-      <a class="top0" style="width: 100%;" href="." "="">
-        <picture><source type="image/avif" srcset="/eleventy-base-blog/about/DNJ4BjlxZJ-300.avif 300w"><source type="image/webp" srcset="/eleventy-base-blog/about/DNJ4BjlxZJ-300.webp 300w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/about/DNJ4BjlxZJ-300.png" alt="award" class="image-contains fullwidth" style="border-radius: 4px;height: auto;" width="300" height="315"></picture>
+      <a class="top0" style="width: 100%;" href="" "="">
+        <picture><source type="image/avif" srcset="/about/DNJ4BjlxZJ-300.avif 300w"><source type="image/webp" srcset="/about/DNJ4BjlxZJ-300.webp 300w"><img loading="lazy" decoding="async" src="/about/DNJ4BjlxZJ-300.png" alt="award" class="image-contains fullwidth" style="border-radius: 4px;height: auto;" width="300" height="315"></picture>
       </a>
     </div>
     <div>
@@ -171,7 +842,7 @@ to our events, now or in the future! And thanks to Honolulu Magazine for the rec
     <div class="inline-aligned card-header">
       <div class="flex">
         <a class="top0" href="https://www.waicleanwater.org/" "="">
-          <picture><source type="image/avif" srcset="/eleventy-base-blog/about/0ncaENgIat-300.avif 300w"><source type="image/webp" srcset="/eleventy-base-blog/about/0ncaENgIat-300.webp 300w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/about/0ncaENgIat-300.jpeg" alt="greece" class="card-avatar image-covers" width="300" height="397"></picture>
+          <picture><source type="image/avif" srcset="/about/0ncaENgIat-300.avif 300w"><source type="image/webp" srcset="/about/0ncaENgIat-300.webp 300w"><img loading="lazy" decoding="async" src="/about/0ncaENgIat-300.jpeg" alt="greece" class="card-avatar image-covers" width="300" height="397"></picture>
         </a>
       </div>
       <div class="left10p">
@@ -200,7 +871,7 @@ to our events, now or in the future! And thanks to Honolulu Magazine for the rec
     <div class="inline-aligned card-header">
       <div class="flex">
         <a class="top0" href="https://www.bookshipapp.com" "="">
-          <picture><source type="image/avif" srcset="/eleventy-base-blog/about/5RXCkeyxY--1000.avif 1000w"><source type="image/webp" srcset="/eleventy-base-blog/about/5RXCkeyxY--1000.webp 1000w"><img loading="lazy" decoding="async" src="/eleventy-base-blog/about/5RXCkeyxY--1000.jpeg" alt="greece" class="card-avatar image-covers" width="1000" height="1007"></picture>
+          <picture><source type="image/avif" srcset="/about/5RXCkeyxY--1000.avif 1000w"><source type="image/webp" srcset="/about/5RXCkeyxY--1000.webp 1000w"><img loading="lazy" decoding="async" src="/about/5RXCkeyxY--1000.jpeg" alt="greece" class="card-avatar image-covers" width="1000" height="1007"></picture>
         </a>
       </div>
       <div class="left10p">
@@ -249,7 +920,7 @@ to our events, now or in the future! And thanks to Honolulu Magazine for the rec
               <i class="icon social-icons" __keywords="true"><svg><use xlink:href="/fa-icons.svg#fab-fa-instagram"></use></svg></i>
             
 
-            <a href="/eleventy-base-blog/feed/feed.xml" target="_blank" rel="noopener" aria-label="RSS feed">
+            <a href="/feed/feed.xml" target="_blank" rel="noopener" aria-label="RSS feed">
               <i class="icon social-icons" __keywords="true"><svg><use xlink:href="/fa-icons.svg#fas-fa-rss"></use></svg></i>
 
               
@@ -259,7 +930,7 @@ to our events, now or in the future! And thanks to Honolulu Magazine for the rec
             </a></a></a></div>
           </footer>
 
-          <!-- This page `/eleventy-base-blog/about/` was built on 2024-11-15T22:24:51.325Z -->
-          <script type="module" src="/eleventy-base-blog/dist/rJ3_G-2ArF.js"></script>
+          <!-- This page `/about/` was built on 2024-11-15T22:49:30.386Z -->
+          <script type="module" src="/dist/rJ3_G-2ArF.js"></script>
         </body>
       </html>
