@@ -15,7 +15,7 @@ import { FontAwesomeIcon, getAvailableIcons, isIconAvailable } from "@campj/elev
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
-
+  
   eleventyConfig.addNunjucksShortcode("FontAwesomeIcon", FontAwesomeIcon);
   // add markdown filter
   eleventyConfig.addFilter('markdownify', (str) => {
@@ -44,9 +44,7 @@ export default async function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig
-		.addPassthroughCopy({
-			"./public/": "/"
-		})
+		.addPassthroughCopy({"./public/": "/"})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
   eleventyConfig.addPassthroughCopy("./content/images/");
