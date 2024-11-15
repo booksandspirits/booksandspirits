@@ -3,6 +3,9 @@ title: "William Finnegan, author of Barbarian Days, A Surfing Life. November 30t
 date: "2016-11-04"
 categories: 
   - "Events"
+description: "Hi Folks,
+
+Due to unforeseen circumstances, Kaui Hart Hemmings will not be able to join us on November."
 ---
 
 Hi Folks,

@@ -4,6 +4,7 @@ date: "2018-07-30"
 categories: 
   - "Events"
 hero: blog/marcus-eriksen-presented-by-books-spirits-in-partnership-with-uh-manoa-speaker-series/images/Screening-Flyer-Marcus-Eriksen-compressed.jpg
+description: "Aloha! Books & Spirits is delighted to get back in action!"
 ---
 
 Aloha!

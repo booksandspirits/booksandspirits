@@ -4,6 +4,7 @@ date: "2017-08-26"
 categories: 
   - "Events"
 hero: blog/six-lessons-from-the-sea-by-jaimal-yogis/images/ALL-OUR-WAVES-ARE-WATER-hc-c_1.jpg
+description: After a couple of decades of surfing and traveling, and writing about surfing and traveling, these are six lessons that I use every day.
 ---
 
 [![All Our Waves Are Water](images/ALL-OUR-WAVES-ARE-WATER-hc-c_1.jpg "All Our Waves Are Water")](http://amzn.to/2t9nFDZ)

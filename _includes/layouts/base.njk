@@ -100,12 +100,12 @@
         {% endif %}
 
         {% if metadata.facebook %}
-          <a href="https://www.facebook.com/{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+          <a href="https://www.facebook.com/{{ metadata.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
             {% FontAwesomeIcon name = "facebook-f", type = "brand", class = "social-icons" %}
           {% endif %}
 
           {% if metadata.instagram %}
-            <a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://www.instagram.com/{{ metadata.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
               {% FontAwesomeIcon name = "instagram", type = "brand", class = "social-icons" %}
             {% endif %}
 
@@ -113,16 +113,16 @@
               {% FontAwesomeIcon name = "rss", type = "solid", class = "social-icons" %}
 
               {% if metadata.youtube_username %}
-                <a href="https://youtube.com/user/{{ site.youtube_username }}" target="_blank" rel="noopener" aria-label="YouTube">{% include " /images/icons/youtube" %}</a>
+                <a href="https://youtube.com/user/{{ metadata.youtube_username }}" target="_blank" rel="noopener" aria-label="YouTube">{% include " /images/icons/youtube" %}</a>
               {% endif %}
               {% if metadata.github_username %}
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="me noopener" aria-label="GitHub">{% include " /images/icons/github" %}</a>
+                <a href="https://github.com/{{ metadata.github_username }}" target="_blank" rel="me noopener" aria-label="GitHub">{% include " /images/icons/github" %}</a>
               {% endif %}
               {% if metadata.codepen_username %}
-                <a href="https://codepen.io/{{ site.codepen_username }}" target="_blank" rel="noopener" aria-label="CodePen">{% include " /images/icons/codepen" %}</a>
+                <a href="https://codepen.io/{{ metadata.codepen_username }}" target="_blank" rel="noopener" aria-label="CodePen">{% include " /images/icons/codepen" %}</a>
               {% endif %}
               {% if metadata.linkedin_username %}
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn">{% include " /images/icons/linkedin" %}</a>
+                <a href="https://linkedin.com/in/{{ metadata.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn">{% include " /images/icons/linkedin" %}</a>
               {% endif %}
             </div>
           </footer>

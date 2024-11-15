@@ -4,6 +4,7 @@ date: "2018-05-17"
 categories: 
   - "Events"
 hero: blog/fun-at-the-hawaii-books-music-festival-and-our-next-event/images/HBMF.jpg
+description: "Aloha! Sorry for our long absence!"
 ---
 
 Aloha!

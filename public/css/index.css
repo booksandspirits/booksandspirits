@@ -279,6 +279,10 @@ code {
   padding-bottom: 0.25rem;
 }
 
+.postlist-description {
+  font-family: italic;
+}
+
 .postlist-link {
   font-size: 1.1875em;
   /* 19px /16 */
@@ -314,6 +318,7 @@ code {
 .postlist-item .post-wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .post-image {

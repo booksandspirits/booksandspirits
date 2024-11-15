@@ -5,6 +5,7 @@ categories:
   - "blog"
   - "Events"
 hero: https://images-na.ssl-images-amazon.com/images/I/51Hkdoc0x3L.jpg
+description: "Stuart was recently interviewed by CSpan for their Local Cities program, as well as for Book TV."
 ---
 {% import "_includes/card.njk" as card %}
 Stuart was recently interviewed by CSpan for their Local Cities program, as well as for Book TV. It's a great interview about the legacy of Eddie Aikau and Stuart's biography of Eddie,  [Eddie Would Go](https://www.amazon.com/Eddie-Would-Go-Hawaiian-Pioneer/dp/0312327188/ref=as_li_ss_tl?_encoding=UTF8&qid=1539638937&sr=8-2&linkCode=ll1&tag=codexmap-20&linkId=301ce5115e842af6476592f088143d68&language=en_US). Hope you can check it out!
