@@ -15,7 +15,7 @@ import { FontAwesomeIcon, getAvailableIcons, isIconAvailable } from "@campj/elev
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
-  
+
   eleventyConfig.addNunjucksShortcode("FontAwesomeIcon", FontAwesomeIcon);
   // add markdown filter
   eleventyConfig.addFilter('markdownify', (str) => {
