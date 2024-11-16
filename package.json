@@ -1,7 +1,7 @@
 {
   "name": "books-and-spirits",
   "version": "9.0.0",
-  "description": "The repository for the books and spirits blog.",
+  "description": "The repository for the books and spirits blog",
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
