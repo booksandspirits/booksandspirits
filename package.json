@@ -1,47 +1,47 @@
 {
-	"name": "books-and-spirits",
-	"version": "9.0.0",
-	"description": "The repository for the books and spirits blog.",
-	"type": "module",
-	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
-		"build-ghpages": "npx @11ty/eleventy --pathprefix=/",
-		"start": "npx @11ty/eleventy --serve --quiet",
-		"start-ghpages": "npx @11ty/eleventy --pathprefix=/ --serve --quiet",
-		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
-	},
-	"repository": {
-		"type": "git",
-    	        "url": "git://github.com/booksandspirits/website.git"
-	},
-	"author": {
-		"name": "Mark Watkins",
-		"email": "mark.watkins1@gmail.com",
-		"url": "https://www.booksandspirits.com/"
-	},
-	"license": "MIT",
-	"engines": {
-		"node": ">=18"
-	},
-	"homepage": "https://www.booksandspirits.com",
-	"devDependencies": {
-		"@11ty/eleventy": "^3.0.0",
-		"@11ty/eleventy-img": "^5.0.0",
-		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-rss": "^2.0.2",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@campj/eleventy-fa-icons": "^0.0.7",
-		"cross-env": "^7.0.3",
-		"luxon": "^3.5.0",
-		"zod": "^3.23.8",
-		"zod-validation-error": "^3.3.1"
-	},
-	"dependencies": {
-		"@fortawesome/free-solid-svg-icons": "^6.6.0",
-		"@zachleat/heading-anchors": "^1.0.1",
-		"markdown-it-attrs": "^4.2.0"
-	}
+  "name": "books-and-spirits",
+  "version": "9.0.0",
+  "description": "The repository for the books and spirits blog.",
+  "type": "module",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/",
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "start-ghpages": "npx @11ty/eleventy --pathprefix=/ --serve --quiet",
+    "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/booksandspirits/booksandspirits.git"
+  },
+  "author": {
+    "name": "Mark Watkins",
+    "email": "mark.watkins1@gmail.com",
+    "url": "https://www.booksandspirits.com/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "homepage": "https://www.booksandspirits.com",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@campj/eleventy-fa-icons": "^0.0.7",
+    "cross-env": "^7.0.3",
+    "luxon": "^3.5.0",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.1"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@zachleat/heading-anchors": "^1.0.1",
+    "markdown-it-attrs": "^4.2.0"
+  }
 }
