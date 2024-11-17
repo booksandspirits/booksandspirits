@@ -9,3 +9,4 @@ It is built using the [starter blog repository](https://github.com/11ty/eleventy
 Follow the usual eleventy instructions.
 
 * [Want a more generic/detailed getting started guide?](https://www.11ty.dev/docs/getting-started/)
+
